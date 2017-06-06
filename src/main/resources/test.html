@@ -1,0 +1,764 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
+<html>
+<head>
+<title>南宁住房公积金网</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="../../styles/nngjj/css.css" rel="stylesheet" type="text/css">
+<style type="text/css" media="print">
+.noprint {
+	display: none;
+}
+</style>
+
+<script>
+	function isDateOK(start, end) {
+		var reg = /^(\d{4})(\d{2})(\d{2})$/;
+		return (reg.test(start) && RegExp.$2 <= 12 && RegExp.$3 <= 31
+				&& reg.test(end) && RegExp.$2 <= 12 && RegExp.$3 <= 31);
+	}
+
+	function formsubmit() {
+		form = document.getElementById('queryForm');
+		if (!isDateOK(form.startDate.value, form.endDate.value)) {
+			alert("请输入正确的日期格式，如\"20120208\"。");
+			return false;
+		}
+		if (Number(form.startDate.value) > Number(form.endDate.value)) {
+			alert("开始日期应小于结束日期");
+			return false;
+		}
+
+		form.submit();
+	}
+</script>
+</head>
+
+<body>
+
+	<table class="noprint" width="1002" height="181" border="0"
+		align="center" cellpadding="0" cellspacing="0">
+		<tr>
+			<td width="469" align="left"><embed width="1002" height="181"
+					src="/web/images/nngjj/flash.swf">
+					<!--img src="/web/images/nngjj/nanning_a01_r1_c1.jpg" width="469" height="181"--></td>
+			<!--td><img src="/web/images/nngjj/nanning_a01_r1_c20.jpg" width="533" height="181"></td-->
+		</tr>
+	</table>
+	<table class="noprint" width="1002" height="35" border="0"
+		align="center" cellpadding="0" cellspacing="0"
+		background="../../images/nngjj/nanning_a01_r2_c4.jpg">
+		<tr>
+			<td align="center" class="white13"><a href=" /web " class="a11">首页</a>
+				|&nbsp;<a
+				href="/web/static/articles/catalog_ff80808136f28fa401370b750f65004e/article_ff8080813772618f0137b6d881580088/ff8080813772618f0137b6d881580088.html
+"
+				class="a11">组织机构</a> |&nbsp;<a
+				href="/web/static/catalogs/catalog_ff80808135d25b730135d66abefa0023/ff80808135d25b730135d66abefa0023.html"
+				class="a11">政策法规</a> |&nbsp;<a
+				href="/web/static/catalogs/catalog_ff80808135d25b730135d6641cbc0010/ff80808135d25b730135d6641cbc0010.html"
+				class="a11">工作动态</a> |&nbsp;<a
+				href="/web/static/catalogs/catalog_ff80808135d25b730135d664382b0011/ff80808135d25b730135d664382b0011.html"
+				class="a11">新闻动态</a> |&nbsp;<a
+				href="http://180.141.91.9:8080/html/11531/index.html" taget="_blank"
+				class="a11">政府信息公开</a> |&nbsp;<a
+				href="/web/static/articles/catalog_ff80808135d25b730135d6a2e16c002e/article_ff80808136f28fa40136f2f440ea0017/ff80808136f28fa40136f2f440ea0017.html
+"
+				class="a11">业务办理指南</a> <!-- zhu_ym_2015-6-5
+|&nbsp;<a href="/web/static/catalogs/catalog_ff80808135d25b730135d69c1f0f002c/ff80808135d25b730135d69c1f0f002c.html" class="a11">执法维权</a> -->
+				|&nbsp;<a
+				href="/web/static/catalogs/catalog_ff80808135d25b730135d664e6a00014/ff80808135d25b730135d664e6a00014.html"
+				class="a11">依法行政专栏</a> |&nbsp;<a
+				href="/web/static/catalogs/catalog_ff8080813772618f0137dffca5a500aa/ff8080813772618f0137dffca5a500aa.html
+"
+				class="a11">廉政建设</a> |&nbsp;<a
+				href="/web/static/catalogs/catalog_ff80808135d25b730135d66a168e0022/ff80808135d25b730135d66a168e0022.html"
+				class="a11">表格下载</a> |&nbsp;<a
+				href="/web/static/catalogs/catalog_ff80808135d25b730135d66582d40017/ff80808135d25b730135d66582d40017.html"
+				class="a11">机构风采</a> |&nbsp;<a
+				href="/web/dynamic/mailbox/mailboxAction$getMailboxByMailboxCatalogName.action
+"
+				class="a11">在线留言</a></td>
+		</tr>
+	</table>
+	<SCRIPT LANGUAGE="JavaScript">
+	<!--
+		String.prototype.Trim = function() {
+			return this.replace(/(^\s*)|(\s*$)/g, "");
+		}
+
+		String.prototype.LTrim = function() {
+			return this.replace(/(^\s*)/g, "");
+		}
+
+		String.prototype.RTrim = function() {
+			return this.replace(/(\s*$)/g, "");
+		}
+	//-->
+	</SCRIPT>
+	<script type="text/javascript">
+		function doKeyDownWithEnter(siteCatalogId) {
+			if (event.keyCode == 13) {
+				doSiteSearch(siteCatalogId);
+			}
+		}
+		function doSiteSearch(siteCatalogId) {
+			var url = "/web/dynamic/site/siteArticleSearchAction$searchArticle.action";
+
+			if (!siteCatalogId) {
+				alert("js error：parameter(siteCatalogId) is undefined in this function 'doSiteSearch'");
+				return false;
+			}
+
+			var siteKeyWords = document.getElementById('siteKeyWords').value;
+
+			if (siteKeyWords == null || siteKeyWords.Trim() == "") {
+				alert("请输入关键字！");
+				return false;
+			}
+
+			if (siteCatalogId)
+				url = url + "?siteCatalogId=" + siteCatalogId;
+			if (siteKeyWords != null && siteKeyWords != "")
+				url = url + "&siteKeyWords="
+						+ encodeURIComponent(encodeURI(siteKeyWords));
+
+			window.open(url);
+			return false;
+
+		}
+	</script>
+	<table class="noprint" width="1002" height="34" border="0"
+		align="center" cellpadding="0" cellspacing="0"
+		background="../../images/nngjj/nanning_a01_r3_c4.jpg">
+		<tr>
+			<td width="682" align="left">&nbsp;&nbsp;&nbsp;&nbsp;您现在的位置是：首页
+				&gt; 职工住房公积金基本情况</td>
+			<td width="320" align="center"><table width="297" height="25"
+					border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="184"><input id="siteKeyWords" name="siteKeyWords"
+							type="text" onkeydown="doKeyDownWithEnter('0');" /></td>
+						<td width="54" align="left"><input name="button"
+							type="button" id="button" value="搜索" onclick="doSiteSearch('0');" /></td>
+						<td width="50"></td>
+					</tr>
+				</table></td>
+		</tr>
+	</table>
+	<table width="1002" height="10" border="0" align="center"
+		cellpadding="0" cellspacing="0">
+		<tr>
+			<td></td>
+		</tr>
+	</table>
+	<table width="1002" border="0" align="center" cellpadding="0"
+		cellspacing="0">
+		<tr valign="top">
+			<td><table width="100%" height="272" border="0" cellpadding="0"
+					cellspacing="1" bgcolor="#CCCCCC">
+					<tr>
+						<td height="270" align="center" valign="top" bgcolor="#FFFFFF"
+							class="g2"><table width="100%" border="0" cellspacing="0"
+								cellpadding="0">
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+							</table>
+							<table width="95%" height="48" border="0" cellpadding="0"
+								cellspacing="0">
+								<tr class="noprint">
+									<td align="right"><input type="button"
+										style="margin-right: 30px; font-size: 12px;" value="打印本页"
+										onclick="window.print()"></td>
+								</tr>
+								<tr>
+									<td height="46" align="center" valign="middle" class="red4">职工住房公积金基本情况</td>
+								</tr>
+								<tr>
+									<td height="2" align="center" valign="middle" class="black12"><table
+											width="100%" height="1" border="0" cellpadding="0"
+											cellspacing="0" bgcolor="#D70101">
+											<tr>
+												<td></td>
+											</tr>
+										</table></td>
+								</tr>
+							</table>
+							<table width="95%" height="2" border="0" cellpadding="0"
+								cellspacing="0">
+								<tr>
+									<td height="2" align="center" valign="middle" class="black12">&nbsp;</td>
+								</tr>
+							</table>
+
+							<table width="80%" border="0" cellpadding="0" cellspacing="1"
+								bgcolor="#FDB38E">
+								<tr align="center" bgcolor="#E7E7E7">
+									<td height="30" bgcolor="#FFF8C1">姓名</td>
+									<td height="30" bgcolor="#FFFFFF">李用吉</td>
+									<td height="30" bgcolor="#FFF8C1">个人编号</td>
+									<td height="30" bgcolor="#FFFFFF">215</td>
+									<td height="30" bgcolor="#FFF8C1">缴存状态</td>
+									<td height="30" bgcolor="#FFFFFF">交存</td>
+								</tr>
+								<tr align="center" bgcolor="#FFFFFF">
+									<td height="30" bgcolor="#FFF8C1">单位账号</td>
+									<td width="15%" height="30">00122660</td>
+									<td width="18%" height="30" bgcolor="#FFF8C1">身份证号</td>
+									<td height="30" colspan=3 bgcolor="#FFFFFF">450521198803054838</td>
+								</tr>
+								<!-- //zhu_ym modify for 新增 转出单位账号与所属网点名称 at 2015-6-3 -->
+								<tr align="center" bgcolor="#FFFFFF">
+									<td height="30" bgcolor="#FFF8C1">转出单位账号</td>
+									<td width="15%" height="30">00121695</td>
+									<td width="18%" height="30" bgcolor="#FFF8C1">所属网点名称</td>
+									<td height="30" colspan=3 bgcolor="#FFFFFF">青秀营业部</td>
+								</tr>
+								<!-- //zhu_ym modify for 新增 转出单位账号与所属网点名称 at 2015-6-3 -->
+								<tr align="center" bgcolor="#FFFFFF">
+									<td bgcolor="#FFF8C1">单位名称</td>
+									<td colspan="3" height="30">桂林银行股份有限公司南宁分行</td>
+									<td height="30" bgcolor="#FFF8C1">工资</td>
+									<td height="30">14100.00</td>
+								</tr>
+								<tr align="center" bgcolor="#FFFFFF">
+									<td height="30" bgcolor="#FFF8C1">单位月缴存额</td>
+									<td height="30">1692.00</td>
+									<td height="30" bgcolor="#FFF8C1">个人月缴存额</td>
+									<td height="30">1692.00</td>
+									<td height="30" bgcolor="#FFF8C1">合计月缴存额</td>
+									<td height="30">3384.00</td>
+								</tr>
+								<tr align="center" bgcolor="#FFFFFF">
+									<td height="30" bgcolor="#FFF8C1">累计提取额</td>
+									<td height="30">106200.00</td>
+									<td height="30" bgcolor="#FFF8C1">账户余额</td>
+									<td height="30">27209.74</td>
+									<td height="30" bgcolor="#FFF8C1">当前缴存年月</td>
+									<td height="30">201705</td>
+								</tr>
+							</table>
+
+							<table width="95%" height="48" border="0" cellpadding="0"
+								cellspacing="0">
+								<tr>
+									<td height="46" align="center" valign="middle" class="red4">职工住房公积金明细账表</td>
+								</tr>
+								<tr>
+									<td height="2" align="center" valign="middle" class="black12"><table
+											width="100%" height="1" border="0" cellpadding="0"
+											cellspacing="0" bgcolor="#D70101">
+											<tr>
+												<td></td>
+											</tr>
+										</table></td>
+								</tr>
+							</table>
+							<table width="95%" height="2" border="0" cellpadding="0"
+								cellspacing="0">
+								<tr>
+									<td height="2" align="center" valign="middle" class="black12">&nbsp;</td>
+								</tr>
+							</table>
+							<form action="gjjquery$geren" id="queryForm" name="query"
+								method="POST">
+								<table width="80%" border="0" cellpadding="0" cellspacing="1"
+									bgcolor="#FDB38E">
+									<tr align="center" bgcolor="#FFFFFF">
+										<td width="19%" height="30" bgcolor="#FFF8C1">开始日期</td>
+										<td width="31%" height="30"><input size="10"
+											maxlength="8" id="startDate" name="queryBean.startDate"
+											value="20150602" /></td>
+										<td width="21%" height="30" bgcolor="#FFF8C1">结束日期</td>
+										<td width="29%" height="30"><input size="10"
+											maxlength="8" id="endDate" name="queryBean.endDate"
+											value="20170602" /></td>
+									</tr>
+								</table>
+
+							</form>
+							<table width="100%" height="52" border="0" cellpadding="0"
+								cellspacing="0">
+								<tr>
+									<td align="center"><a href="##" onclick="formsubmit()"><img
+											src="../../images/nngjj/button08.jpg" width="68" height="21"
+											border="0"></a></td>
+								</tr>
+							</table>
+
+							<table width="80%" height="41" border="0" cellpadding="0"
+								cellspacing="0">
+								<tr class="gray12">
+									<td width="37%" height="2" align="left" valign="middle"
+										class="gray12">姓名：李用吉</td>
+									<td width="45%" align="left" valign="middle" class="gray12">（20150602到20170602）</td>
+									<td width="18%" align="center" valign="middle" class="gray12">单位：元</td>
+								</tr>
+							</table>
+							<table width="80%" border="0" cellpadding="0" cellspacing="1"
+								bgcolor="#CCCCCC">
+								<tr align="center" bgcolor="#E0E0E0">
+									<td width="12%" height="30">业务日期</td>
+									<td width="12%" height="30">业务类型</td>
+									<td width="14%" height="30">缴存年月</td>
+									<td height="30">增加额</td>
+									<td height="30">减少额</td>
+									<td height="30">余额</td>
+									<td>缴存单位</td>
+									<td>备注</td>
+								</tr>
+
+								<tr align="center" bgcolor="#FFFFFF">
+									<td height="30">20170525</td>
+									<td height="30">汇交分配</td>
+									<td height="30">201705</td>
+									<td width="13%" height="30">3384.00</td>
+									<td width="13%" height="30">0.00</td>
+									<td width="12%" height="30">27209.74</td>
+									<td width="12%">00122660</td>
+									<td width="12%">汇交分配</td>
+								</tr>
+
+								<tr align="center" bgcolor="#FFFFFF">
+									<td height="30">20170424</td>
+									<td height="30">汇交分配</td>
+									<td height="30">201704</td>
+									<td width="13%" height="30">3384.00</td>
+									<td width="13%" height="30">0.00</td>
+									<td width="12%" height="30">23825.74</td>
+									<td width="12%">00122660</td>
+									<td width="12%">汇交分配</td>
+								</tr>
+
+								<tr align="center" bgcolor="#FFFFFF">
+									<td height="30">20170322</td>
+									<td height="30">汇交分配</td>
+									<td height="30">201703</td>
+									<td width="13%" height="30">3384.00</td>
+									<td width="13%" height="30">0.00</td>
+									<td width="12%" height="30">20441.74</td>
+									<td width="12%">00122660</td>
+									<td width="12%">汇交分配</td>
+								</tr>
+
+								<tr align="center" bgcolor="#FFFFFF">
+									<td height="30">20170224</td>
+									<td height="30">汇交分配</td>
+									<td height="30">201702</td>
+									<td width="13%" height="30">3384.00</td>
+									<td width="13%" height="30">0.00</td>
+									<td width="12%" height="30">17057.74</td>
+									<td width="12%">00122660</td>
+									<td width="12%">汇交分配</td>
+								</tr>
+
+								<tr align="center" bgcolor="#FFFFFF">
+									<td height="30">20170123</td>
+									<td height="30">汇交分配</td>
+									<td height="30">201701</td>
+									<td width="13%" height="30">3384.00</td>
+									<td width="13%" height="30">0.00</td>
+									<td width="12%" height="30">13673.74</td>
+									<td width="12%">00122660</td>
+									<td width="12%">汇交分配</td>
+								</tr>
+
+								<tr align="center" bgcolor="#FFFFFF">
+									<td height="30">20161222</td>
+									<td height="30">汇交分配</td>
+									<td height="30">201612</td>
+									<td width="13%" height="30">3384.00</td>
+									<td width="13%" height="30">0.00</td>
+									<td width="12%" height="30">10289.74</td>
+									<td width="12%">00122660</td>
+									<td width="12%">汇交分配</td>
+								</tr>
+
+								<tr align="center" bgcolor="#FFFFFF">
+									<td height="30">20161125</td>
+									<td height="30">汇交分配</td>
+									<td height="30">201611</td>
+									<td width="13%" height="30">3384.00</td>
+									<td width="13%" height="30">0.00</td>
+									<td width="12%" height="30">6905.74</td>
+									<td width="12%">00122660</td>
+									<td width="12%">汇交分配</td>
+								</tr>
+
+								<tr align="center" bgcolor="#FFFFFF">
+									<td height="30">20161026</td>
+									<td height="30">汇交分配</td>
+									<td height="30">201610</td>
+									<td width="13%" height="30">3384.00</td>
+									<td width="13%" height="30">0.00</td>
+									<td width="12%" height="30">3521.74</td>
+									<td width="12%">00122660</td>
+									<td width="12%">汇交分配</td>
+								</tr>
+
+								<tr align="center" bgcolor="#FFFFFF">
+									<td height="30">20161011</td>
+									<td height="30">部分支取</td>
+									<td height="30">201609</td>
+									<td width="13%" height="30">0.00</td>
+									<td width="13%" height="30">41900.00</td>
+									<td width="12%" height="30">137.74</td>
+									<td width="12%">00122660</td>
+									<td width="12%">2015.9贷-利海&middot;亚洲国际2号楼2-901号</td>
+								</tr>
+
+								<tr align="center" bgcolor="#FFFFFF">
+									<td height="30">20160927</td>
+									<td height="30">汇交分配</td>
+									<td height="30">201609</td>
+									<td width="13%" height="30">3384.00</td>
+									<td width="13%" height="30">0.00</td>
+									<td width="12%" height="30">42037.74</td>
+									<td width="12%">00122660</td>
+									<td width="12%">汇交分配</td>
+								</tr>
+
+								<tr align="center" bgcolor="#FFFFFF">
+									<td height="30">20160829</td>
+									<td height="30">补交分配</td>
+									<td height="30"></td>
+									<td width="13%" height="30">564.00</td>
+									<td width="13%" height="30">0.00</td>
+									<td width="12%" height="30">38653.74</td>
+									<td width="12%">00122660</td>
+									<td width="12%">补交分配2016-07/2016-07</td>
+								</tr>
+
+								<tr align="center" bgcolor="#FFFFFF">
+									<td height="30">20160829</td>
+									<td height="30">汇交分配</td>
+									<td height="30">201608</td>
+									<td width="13%" height="30">3384.00</td>
+									<td width="13%" height="30">0.00</td>
+									<td width="12%" height="30">38089.74</td>
+									<td width="12%">00122660</td>
+									<td width="12%">汇交分配</td>
+								</tr>
+
+								<tr align="center" bgcolor="#FFFFFF">
+									<td height="30">20160726</td>
+									<td height="30">汇交分配</td>
+									<td height="30">201607</td>
+									<td width="13%" height="30">2820.00</td>
+									<td width="13%" height="30">0.00</td>
+									<td width="12%" height="30">34705.74</td>
+									<td width="12%">00122660</td>
+									<td width="12%">汇交分配</td>
+								</tr>
+
+								<tr align="center" bgcolor="#FFFFFF">
+									<td height="30">20160630</td>
+									<td height="30">年终结息</td>
+									<td height="30"></td>
+									<td width="13%" height="30">336.17</td>
+									<td width="13%" height="30">0.00</td>
+									<td width="12%" height="30">31885.74</td>
+									<td width="12%">00122660</td>
+									<td width="12%">年度结息</td>
+								</tr>
+
+								<tr align="center" bgcolor="#FFFFFF">
+									<td height="30">20160622</td>
+									<td height="30">汇交分配</td>
+									<td height="30">201606</td>
+									<td width="13%" height="30">2820.00</td>
+									<td width="13%" height="30">0.00</td>
+									<td width="12%" height="30">31549.57</td>
+									<td width="12%">00122660</td>
+									<td width="12%">汇交分配</td>
+								</tr>
+
+								<tr align="center" bgcolor="#FFFFFF">
+									<td height="30">20160527</td>
+									<td height="30">汇交分配</td>
+									<td height="30">201605</td>
+									<td width="13%" height="30">2820.00</td>
+									<td width="13%" height="30">0.00</td>
+									<td width="12%" height="30">28729.57</td>
+									<td width="12%">00122660</td>
+									<td width="12%">汇交分配</td>
+								</tr>
+
+								<tr align="center" bgcolor="#FFFFFF">
+									<td height="30">20160427</td>
+									<td height="30">汇交分配</td>
+									<td height="30">201604</td>
+									<td width="13%" height="30">2820.00</td>
+									<td width="13%" height="30">0.00</td>
+									<td width="12%" height="30">25909.57</td>
+									<td width="12%">00122660</td>
+									<td width="12%">汇交分配</td>
+								</tr>
+
+								<tr align="center" bgcolor="#FFFFFF">
+									<td height="30">20160329</td>
+									<td height="30">汇交分配</td>
+									<td height="30">201603</td>
+									<td width="13%" height="30">2820.00</td>
+									<td width="13%" height="30">0.00</td>
+									<td width="12%" height="30">23089.57</td>
+									<td width="12%">00122660</td>
+									<td width="12%">汇交分配</td>
+								</tr>
+
+								<tr align="center" bgcolor="#FFFFFF">
+									<td height="30">20160229</td>
+									<td height="30">汇交分配</td>
+									<td height="30">201602</td>
+									<td width="13%" height="30">2820.00</td>
+									<td width="13%" height="30">0.00</td>
+									<td width="12%" height="30">20269.57</td>
+									<td width="12%">00122660</td>
+									<td width="12%">汇交分配</td>
+								</tr>
+
+								<tr align="center" bgcolor="#FFFFFF">
+									<td height="30">20160129</td>
+									<td height="30">汇交分配</td>
+									<td height="30">201601</td>
+									<td width="13%" height="30">2820.00</td>
+									<td width="13%" height="30">0.00</td>
+									<td width="12%" height="30">17449.57</td>
+									<td width="12%">00122660</td>
+									<td width="12%">汇交分配</td>
+								</tr>
+
+								<tr align="center" bgcolor="#FFFFFF">
+									<td height="30">20151223</td>
+									<td height="30">汇交分配</td>
+									<td height="30">201512</td>
+									<td width="13%" height="30">2820.00</td>
+									<td width="13%" height="30">0.00</td>
+									<td width="12%" height="30">14629.57</td>
+									<td width="12%">00122660</td>
+									<td width="12%">汇交分配</td>
+								</tr>
+
+								<tr align="center" bgcolor="#FFFFFF">
+									<td height="30">20151127</td>
+									<td height="30">汇交分配</td>
+									<td height="30">201511</td>
+									<td width="13%" height="30">2820.00</td>
+									<td width="13%" height="30">0.00</td>
+									<td width="12%" height="30">11809.57</td>
+									<td width="12%">00122660</td>
+									<td width="12%">汇交分配</td>
+								</tr>
+
+								<tr align="center" bgcolor="#FFFFFF">
+									<td height="30">20151027</td>
+									<td height="30">汇交分配</td>
+									<td height="30">201510</td>
+									<td width="13%" height="30">2820.00</td>
+									<td width="13%" height="30">0.00</td>
+									<td width="12%" height="30">8989.57</td>
+									<td width="12%">00122660</td>
+									<td width="12%">汇交分配</td>
+								</tr>
+
+								<tr align="center" bgcolor="#FFFFFF">
+									<td height="30">20150923</td>
+									<td height="30">汇交分配</td>
+									<td height="30">201509</td>
+									<td width="13%" height="30">2820.00</td>
+									<td width="13%" height="30">0.00</td>
+									<td width="12%" height="30">6169.57</td>
+									<td width="12%">00122660</td>
+									<td width="12%">汇交分配</td>
+								</tr>
+
+								<tr align="center" bgcolor="#FFFFFF">
+									<td height="30">20150922</td>
+									<td height="30">补交分配</td>
+									<td height="30"></td>
+									<td width="13%" height="30">360.00</td>
+									<td width="13%" height="30">0.00</td>
+									<td width="12%" height="30">3349.57</td>
+									<td width="12%">00122660</td>
+									<td width="12%">补交分配2015-07/2015-07</td>
+								</tr>
+
+								<tr align="center" bgcolor="#FFFFFF">
+									<td height="30">20150827</td>
+									<td height="30">汇交分配</td>
+									<td height="30">201508</td>
+									<td width="13%" height="30">2820.00</td>
+									<td width="13%" height="30">0.00</td>
+									<td width="12%" height="30">2989.57</td>
+									<td width="12%">00122660</td>
+									<td width="12%">汇交分配</td>
+								</tr>
+
+								<tr align="center" bgcolor="#FFFFFF">
+									<td height="30">20150820</td>
+									<td height="30">部分支取</td>
+									<td height="30">201508</td>
+									<td width="13%" height="30">0.00</td>
+									<td width="13%" height="30">64300.00</td>
+									<td width="12%" height="30">169.57</td>
+									<td width="12%">00122660</td>
+									<td width="12%">利海&middot;亚洲国际2号楼2-901号(2015.7购)</td>
+								</tr>
+
+								<tr align="center" bgcolor="#FFFFFF">
+									<td height="30">20150729</td>
+									<td height="30">汇交分配</td>
+									<td height="30">201507</td>
+									<td width="13%" height="30">2460.00</td>
+									<td width="13%" height="30">0.00</td>
+									<td width="12%" height="30">64469.57</td>
+									<td width="12%">00122660</td>
+									<td width="12%">汇交分配</td>
+								</tr>
+
+								<tr align="center" bgcolor="#FFFFFF">
+									<td height="30">20150701</td>
+									<td height="30">汇交分配</td>
+									<td height="30">201506</td>
+									<td width="13%" height="30">2460.00</td>
+									<td width="13%" height="30">0.00</td>
+									<td width="12%" height="30">62009.57</td>
+									<td width="12%">00122660</td>
+									<td width="12%">汇交分配</td>
+								</tr>
+
+								<tr align="center" bgcolor="#FFFFFF">
+									<td height="30">20150630</td>
+									<td height="30">年终结息</td>
+									<td height="30"></td>
+									<td width="13%" height="30">558.99</td>
+									<td width="13%" height="30">0.00</td>
+									<td width="12%" height="30">59549.57</td>
+									<td width="12%">00122660</td>
+									<td width="12%">年度结息</td>
+								</tr>
+
+							</table>
+
+
+
+
+							<table width="100%" height="52" border="0" cellpadding="0"
+								cellspacing="0">
+								<tr>
+									<td align="center">&nbsp;</td>
+								</tr>
+							</table>
+							<table width="95%" height="2" border="0" cellpadding="0"
+								cellspacing="0">
+								<tr>
+									<td height="2" align="center" valign="middle" class="black12"><table
+											width="100%" height="1" border="0" cellpadding="0"
+											cellspacing="0" bgcolor="#D70101">
+											<tr>
+												<td></td>
+											</tr>
+										</table></td>
+								</tr>
+							</table>
+							<table width="95%" height="10" border="0" cellpadding="0"
+								cellspacing="0" background="../../images/nngjj/back0.jpg">
+								<tr>
+									<td align="center"></td>
+								</tr>
+							</table></td>
+					</tr>
+				</table></td>
+		</tr>
+	</table>
+	<table width="1002" height="10" border="0" align="center"
+		cellpadding="0" cellspacing="0">
+		<tr>
+			<td></td>
+		</tr>
+	</table>
+
+
+	<table class="noprint" width="1002" height="79" border="0"
+		align="center" cellpadding="0" cellspacing="0"
+		background="../../images/nngjj/end_r2_c2.jpg">
+		<tr>
+			<td align="center" valign="top"><table width="83%" height="64"
+					border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td height="35" align="center" class="gray12"><a
+							href="/web/static/catalogs/catalog_ff80808135d25b730135d66883cd001d/ff80808135d25b730135d66883cd001d.html"
+							class="a3">关于我们</a> | <a
+							href="/web/static/catalogs/catalog_ff80808135d25b730135d668678d001c/ff80808135d25b730135d668678d001c.html"
+							class="a3">联系我们</a> <!--  | <a href="http://211.147.145.73/web/static/catalogs/catalog_ff80808135d25b730135d668bbf2001e/ff80808135d25b730135d668bbf2001e.html" class="a3">广告服务</a> | <a href="http://211.147.145.73/web/static/catalogs/catalog_ff80808135d25b730135d668e6da001f/ff80808135d25b730135d668e6da001f.html" class="a3">网站地图</a> -->
+						</td>
+					</tr>
+					<tr>
+						<td align="center" class="gray12">@2005-2011 南宁住房公积金网 版权所有
+							主办：南宁住房公积金管理中心 桂ICP备07002313号
+							网警备案号：45010302000023&nbsp;&nbsp;&nbsp;&nbsp;<span class="red3">你是第
+								<iframe width="40px" height="20" style="margin-bottom: -6px"
+									marginwidth="0" marginheight="0" frameborder="0" scrolling="no"
+									src="/web/dynamic/visitor_count.jsp"></iframe> 个访问者
+						</span>
+						</td>
+					</tr>
+				</table></td>
+		</tr>
+	</table>
+	<div
+		style="clear: both; position: relative; width: 1002px; height: 50px; overflow: hidden; margin: 0 auto; text-align: center;">
+		<div style="float: left; text-align: center">
+			<a id='_gx_gangting'
+				href="http://www.gx.cyberpolice.cn/AlarmInfo/getTishi.do?icon=gangting&checkCode=e18eacb687e797e43b94993f1b9eecbd"
+				target="_blank"
+				style="text-decoration: none; display: block; padding-left: 420px; height: 50px; width: 110px;">
+				<img src="/web/images/nngjj/cyberhome.gif" alt="广西网警虚拟岗亭" border="0">
+			</a>
+		</div>
+		<!--	报警岗亭代码结束	-->
+		<!--	ICP备案代码开始（以后维护此段代码可Ctrl+F查询此段注释）-->
+		<div style="float: left; text-align: center">
+			<a id='_gx_baicp'
+				href="http://www.gx.cyberpolice.cn/AlarmInfo/getTishi.do?icon=baicp&checkCode=e18eacb687e797e43b94993f1b9eecbd"
+				target="_blank"
+				style="text-decoration: none; display: block; padding-left: 40px; height: 50px; width: 110px;">
+				<img src="/web/images/nngjj/baicp.gif" alt="广西网警ICP备案" border="0">
+			</a>
+		</div>
+		<!--	ICP备案代码结束	-->
+
+		<!--	警警察察代码开始（以后维护此段代码可Ctrl+F查询此段注释）-->
+		<div id="_gx_l" style="position: absolute; left: 320px; top: 0px;">
+			<a id='_gx_jingjing'
+				href="http://www.gx.cyberpolice.cn/AlarmInfo/getTishi.do?icon=jingcha&checkCode=e18eacb687e797e43b94993f1b9eecbd"
+				target="_blank"><img src="/web/images/nngjj/police1.gif"
+				alt="警警" border="0" width="35"></a>
+		</div>
+		<div id="_gx_r" style="position: absolute; left: 340px; top: 0px;">
+			<a id='_gx_chacha'
+				href="http://www.gx.cyberpolice.cn/AlarmInfo/getTishi.do?icon=jingcha&checkCode=e18eacb687e797e43b94993f1b9eecbd"
+				target="_blank"><img src="/web/images/nngjj/police2.gif"
+				alt="察察" border="0" width="35"></a>
+		</div>
+
+		<!--	警警察察代码结束	-->
+	</div>
+
+	<!--	图标生效代码开始（以后维护此段代码可Ctrl+F查询此段注释）-->
+	<SCRIPT LANGUAGE="JavaScript">
+	<!--
+		window.onscroll = _gx_f;
+		function _gx_f() {
+
+			var b = document.getElementById("_gx_l");
+			var a = document.getElementById("_gx_r");
+			a.style.top = b.style.top = document.body.scrollTop + 300;
+		}
+	//-->
+	</SCRIPT>
+	<!--	图标生效代码结束	-->
+</body>
+</html>
